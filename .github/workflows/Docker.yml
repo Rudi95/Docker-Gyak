@@ -16,7 +16,7 @@ jobs:
       - name: Build and Push to dockerhub
         uses: docker/build-push-actions@v5
         with:
-          context: 
+          context: .
           push: true
           tags: elaethan/Docker-Gyak:latest
       
