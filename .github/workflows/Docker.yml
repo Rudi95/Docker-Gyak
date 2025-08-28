@@ -1,0 +1,22 @@
+name: Build and push Docker image to dockerhub
+on:
+  push:
+    branches: [main]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - name: Lohin to dockerhub
+        uses: docker/login-actions@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME}}
+          password: ${{ secrets.DOCKERHUB_PASSWORD}}
+      - name: Build and Push to dockerhub
+        uses: docker/build-push-actions@v5
+        with:
+          context: 
+          push: true
+          tags: elaethan/Docker-Gyak:latest
+      
