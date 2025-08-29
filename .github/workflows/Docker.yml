@@ -18,5 +18,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: elaethan/Docker-Gyak:latest
+          tags: elaethan/docker-gyak:latest
       
